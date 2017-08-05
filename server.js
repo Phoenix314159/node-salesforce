@@ -5,9 +5,13 @@ const express = require('express'),
 
 app.use(bodyParser.json());
 
-require('./routes/accounts');
-require('./routes/auth');
-require('./routes/session');
+require('./routes/accounts')(app);
+require('./routes/auth')(app);
+require('./routes/session')(app);
+
+app.get('/', (req, res) => {
+    res.send('hello world');
+})
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
