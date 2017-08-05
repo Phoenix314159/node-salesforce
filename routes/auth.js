@@ -8,10 +8,12 @@ const config = require('../config'),
 module.exports = app => {
     app.get('/oauth/auth', (req, res) => {
         res.redirect(oauth2.getAuthorizationUrl({scope: 'api id web'}));
+        console.log(oauth2);
     });
     app.get('/oauth/callback', (req, res) => {
         let conn = new jsforce.Connection({oauth2: oauth2}),
             code = req.query.code;
+        console.log(code);
         conn.authorize(code, (err, userInfo) => {
             if (err) {
                 return console.error(err);
