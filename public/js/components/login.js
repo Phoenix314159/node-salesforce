@@ -3,12 +3,12 @@ angular.module('salesforce').component('login', {
     controller: function ($http, $state) {
         let vm = this;
         vm.login = () => {
-            console.log('yo');
+            $state.go('accounts');
             return $http({
                 method: 'GET',
                 url: '/oauth/auth'
             })
-            // $state.go('accounts');
+
         }
     }
 });
