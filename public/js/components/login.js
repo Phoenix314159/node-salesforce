@@ -8,7 +8,6 @@ angular.module('salesforce').component('login', {
                 method: 'GET',
                 url: '/oauth/auth'
             })
-
         }
     }
 });
