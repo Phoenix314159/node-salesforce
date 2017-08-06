@@ -3,7 +3,7 @@ angular.module('salesforce').service('mainService', function ($http) {
     vm.login = () => {
         return $http({
             method: 'GET',
-            url: '/auth'
+            url: '/oauth/auth'
         })
     }
 })

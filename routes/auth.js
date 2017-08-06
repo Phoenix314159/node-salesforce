@@ -4,16 +4,18 @@ const config = require('../config'),
         clientId: config.clientID,
         clientSecret: config.clientSecret,
         redirectUri: config.callbackUrl
-    });
+    }),
+    url = oauth2.getAuthorizationUrl({scope: 'full'});
+
 module.exports = app => {
 
-    // app.get('/oauth/auth', (req, res) => {
-    //     res.redirect(oauth2.getAuthorizationUrl({scope: 'api id web'}));
-    // });
-    app.get('/authenticate', (req, res) => {
+    app.get('/oauth/auth', (req, res) => {
+        res.send(url);
+    });
+    app.get('/oauth/callback', (req, res) => {
         let conn = new jsforce.Connection({oauth2: oauth2}),
             code = req.query.code;
-        console.log(code);
+        console.log('code:', code);
         conn.authorize(code, (err, userInfo) => {
             if (err) {
                 return console.error(err);

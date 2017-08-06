@@ -4,33 +4,21 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     fileArr = require('./fileArr'),
     cors = require('cors'),
+    fs = require('fs'),
     corsOptions = {
-    origin: config.callbackUrl
+        origin: 'https://localhost:8443'
     };
-    jsforce = require('jsforce'),
-    oauth2 = new jsforce.OAuth2({
-        clientId: config.clientID,
-        clientSecret: config.clientSecret,
-        redirectUri: config.callbackUrl
-    });
 
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
-// require('./routes/accounts')(app);
+require('./routes/accounts')(app);
 require('./routes/auth')(app);
-// require('./routes/session')(app);
-
-app.get('/auth', (req, res) => {
-    console.log('yo man')
-    res.send(oauth2.getAuthorizationUrl({scope: 'full'}));
-});
+require('./routes/session')(app);
 
 fileArr.arr.map(file => {
     app.use(express.static(__dirname + file));
 })
-
-
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
