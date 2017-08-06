@@ -1,10 +1,10 @@
 angular.module('salesforce').component('login', {
     templateUrl: './views/login.html',
-    controller: function (mainService) {
+    controller: function (mainService, $window) {
         let vm = this;
         vm.login = () => {
             mainService.login().then(res => {
-                vm.link = res.data;
+                $window.location.href = res.data;
                 console.log(res.data);
             })
         }
