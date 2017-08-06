@@ -31,3 +31,14 @@ h1{
     height: 100px;
     font-family: 'Sedgwick Ave Display', cursive;
 }
+.acctbtn{
+    position: absolute;
+    top:-20vh;
+    bottom: 0;
+    left: -4vw;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    font-family: 'Sedgwick Ave Display', cursive;
+}

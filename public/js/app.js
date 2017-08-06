@@ -1,4 +1,4 @@
-angular.module('salesforce', ["ui.router"])
+angular.module('salesforce', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
@@ -9,8 +9,8 @@ angular.module('salesforce', ["ui.router"])
                 component: 'login'
             })
             .state('accounts', {
-                url: '/accounts',
-                templateUrl: '../views/accounts.html',
+                url: '/authenticate',
+                component: 'accounts'
             })
 
     })

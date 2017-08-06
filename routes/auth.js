@@ -6,11 +6,11 @@ const config = require('../config'),
         redirectUri: config.callbackUrl
     });
 module.exports = app => {
-    app.get('/oauth/auth', (req, res) => {
-        res.redirect(oauth2.getAuthorizationUrl({scope: 'api id web'}));
-        console.log(oauth2);
-    });
-    app.get('/oauth/callback', (req, res) => {
+
+    // app.get('/oauth/auth', (req, res) => {
+    //     res.redirect(oauth2.getAuthorizationUrl({scope: 'api id web'}));
+    // });
+    app.get('/authenticate', (req, res) => {
         let conn = new jsforce.Connection({oauth2: oauth2}),
             code = req.query.code;
         console.log(code);
@@ -24,7 +24,7 @@ module.exports = app => {
             console.log('Org ID: ' + userInfo.organizationId);
             req.session.accessToken = conn.accessToken;
             req.session.instanceUrl = conn.instanceUrl;
-            res.redirect('/accounts');
+            res.redirect('http://localhost:8443/accounts');
         });
     });
 }

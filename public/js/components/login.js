@@ -1,13 +1,11 @@
 angular.module('salesforce').component('login', {
     templateUrl: './views/login.html',
-    controller: function ($http, $state) {
+    controller: function (mainService, $window) {
         let vm = this;
         vm.login = () => {
-            $state.go('accounts');
-            return $http({
-                method: 'GET',
-                url: '/oauth/auth'
+            mainService.login().then(res => {
+                $window.location.href = res.data
             })
         }
     }
-});
+})
