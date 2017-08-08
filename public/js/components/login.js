@@ -5,7 +5,6 @@ angular.module('salesforce').component('login', {
         vm.login = () => {
             mainService.login().then(res => {
                 $window.location.href = res.data;
-                console.log(res.data);
             })
         }
     }

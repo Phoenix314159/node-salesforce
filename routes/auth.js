@@ -8,9 +8,8 @@ const config = require('../config'),
     url = oauth2.getAuthorizationUrl({scope: 'full'});
 
 module.exports = app => {
-
-    app.get('/oauth/auth', function(req, res) {
-        res.status(200).send(url);
+    app.get('/oauth/auth', (req, res) => {
+        res.send(url);
     });
     app.get('/oauth/callback', (req, res) => {
         let conn = new jsforce.Connection({oauth2: oauth2}),

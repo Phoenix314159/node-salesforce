@@ -6,4 +6,11 @@ angular.module('salesforce').service('mainService', function ($http) {
             url: '/oauth/auth'
         })
     }
+
+    vm.getAuth = () => {
+        return $http({
+            method: 'GET',
+            url: '/oauth/callback'
+        })
+    }
 })

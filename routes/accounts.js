@@ -1,6 +1,10 @@
 const jsforce = require('jsforce');
 
 module.exports = app => {
+
+    app.get('/', (req, res) => {
+        res.render('pages/login');
+    });
     app.get('/accounts', (req, res) => {
         if (!req.session.accessToken || !req.session.instanceUrl) {
             res.redirect('/');
