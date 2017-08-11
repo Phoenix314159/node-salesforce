@@ -2,7 +2,7 @@
 <button ng-show="$ctrl.showButton" class="btn btn-primary acctbtn"
         ng-click="$ctrl.showData()">Show Data
 </button>
-<div class="accountinfo">
+<div class="accountinfo" ng-hide="$ctrl.showButton">
       <div ng-repeat="x in $ctrl.data">
             {{x.attributes.Name}}
       </div>
