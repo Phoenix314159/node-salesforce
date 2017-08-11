@@ -9,10 +9,10 @@ require('./routes/auth')(app);
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('port', process.env.PORT || config.port);
-// app.listen(config.port, () => {
-//     console.log(`listening on port ${config.port}`)
-// })
+let port = process.env.port || 8443;
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+})
 
 
 
