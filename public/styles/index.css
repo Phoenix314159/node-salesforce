@@ -33,8 +33,8 @@ h1{
 }
 .acctbtn{
     position: absolute;
-    top:-20vh;
-    bottom: 0;
+    top:20vh;
+    bottom: 50vh;
     left: -4vw;
     right: 0;
     margin: auto;
