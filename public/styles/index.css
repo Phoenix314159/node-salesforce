@@ -45,4 +45,7 @@ h1{
 .acctinfo2{
     display: flex;
     justify-content: center;
+    position: absolute;
+    top:32vh;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
