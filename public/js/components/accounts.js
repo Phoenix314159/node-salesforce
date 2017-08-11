@@ -1,6 +1,6 @@
 angular.module('salesforce').component('accounts', {
     templateUrl: './views/accounts.html',
-    controller: function () {
+    controller: function (mainService) {
         let vm = this;
 
         vm.showButton = true;
@@ -8,6 +8,12 @@ angular.module('salesforce').component('accounts', {
         vm.showData = () => {
             vm.showButton = false;
         }
+
+        vm.getAuth = mainService.getAuth().then(res => {
+            console.log(res);
+        })
+        vm.getAuth();
+
 
     }
 });
