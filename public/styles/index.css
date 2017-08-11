@@ -42,3 +42,11 @@ h1{
     height: 100px;
     font-family: 'Sedgwick Ave Display', cursive;
 }
+.accountinfo{
+    position: absolute;
+    top:20vh;
+    bottom: 50vh;
+    left: -4vw;
+    right: 0;
+    font-family: 'Sedgwick Ave Display', cursive;
+}

@@ -1,7 +1,12 @@
 <h1 class="accounts"> Accounts</h1>
 <button ng-show="$ctrl.showButton" class="btn btn-primary acctbtn"
-        ng-click="$ctrl.showData()">Show Data</button>
-
-<div ng-repeat="x in $ctrl.data">
-      {{x}}
+        ng-click="$ctrl.showData()">Show Data
+</button>
+<div class="accountinfo">
+      <div ng-repeat="x in $ctrl.data">
+            {{x.attributes.Name}}
+      </div>
+      <div ng-repeat="x in $ctrl.data">
+            {{x.attributes.id}}
+      </div>
 </div>
