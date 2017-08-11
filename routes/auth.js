@@ -8,6 +8,9 @@ const config = require('../config'),
     url = oauth2.getAuthorizationUrl({scope: 'full'});
 
 module.exports = app => {
+    app.get('/', (req, res) => {
+       res.send('yo man');
+    });
     app.get('/oauth/auth', (req, res) => {
         res.send(url);
     });
