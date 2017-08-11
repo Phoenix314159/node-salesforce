@@ -10,7 +10,7 @@ const config = require('../config'),
 module.exports = app => {
 
     app.get('/oauth/auth', (req, res) => {
-        res.redirect(url);
+        res.send(url);
     });
     app.get('/oauth/callback', (req, res) => {
         let conn = new jsforce.Connection({oauth2: oauth2}),
