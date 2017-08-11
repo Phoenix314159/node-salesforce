@@ -18,7 +18,7 @@ module.exports = app => {
                 console.error(err);
                 res.redirect('/');
             }
-            res.render('accounts', {title: 'Accounts List', accounts: result.records});
+            res.json(result.records);
         });
     });
 }

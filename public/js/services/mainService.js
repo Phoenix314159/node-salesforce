@@ -7,10 +7,10 @@ angular.module('salesforce').service('mainService', function ($http) {
         })
     }
 
-    vm.getAuth = () => {
+    vm.getAccts = () => {
         return $http({
             method: 'GET',
-            url: '/oauth/callback'
+            url: '/accountspersonal'
         })
     }
 })

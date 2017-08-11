@@ -9,11 +9,12 @@ angular.module('salesforce').component('accounts', {
             vm.showButton = false;
         }
 
-        vm.getAuth = () => {
-            mainService.getAuth().then(res => {
-                console.log(res);
+        vm.showData = () => {
+            mainService.getAccts().then(res => {
+                console.log(res.data);
+                vm.data = res.data;
             })
         }
-        vm.getAuth();
+
     }
 });
