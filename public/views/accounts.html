@@ -3,12 +3,12 @@
         ng-click="$ctrl.showData()">Show Data
 </button>
 <div class="acctinfo2">
-      <div class="accountinfo" ng-hide="$ctrl.showButton">
+      <div  ng-hide="$ctrl.showButton">
             <div ng-repeat="x in $ctrl.data">
                   {{x.Name}}
             </div>
       </div>
-      <div>
+      <div ng-hide="$ctrl.showButton">
             <div ng-repeat="x in $ctrl.data">
                   {{x.Id}}
             </div>
