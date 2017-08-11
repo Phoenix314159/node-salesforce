@@ -2,6 +2,7 @@ const jsforce = require('jsforce');
 
 module.exports = app => {
 
+
     app.get('/accounts', (req, res) => {
         if (!req.session.accessToken || !req.session.instanceUrl) {
             res.redirect('/');
