@@ -7,7 +7,7 @@ require('./middleware/session')(app);
 require('./routes/accounts')(app);
 require('./routes/auth')(app);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(process.env.PWD + '/public'));
 
 let port = process.env.PORT || config.port;
 
