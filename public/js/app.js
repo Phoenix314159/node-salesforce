@@ -9,7 +9,7 @@ angular.module('salesforce', ['ui.router'])
                 component: 'login'
             })
             .state('accounts', {
-                url: '/authenticate',
+                url: '/accounts',
                 component: 'accounts'
             })
 
