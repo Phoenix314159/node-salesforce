@@ -2,11 +2,15 @@
 <button ng-show="$ctrl.showButton" class="btn btn-primary acctbtn"
         ng-click="$ctrl.showData()">Show Data
 </button>
-<div class="accountinfo" ng-hide="$ctrl.showButton">
-      <div ng-repeat="x in $ctrl.data">
-            {{x.Name}}
+<div class="acctinfo2">
+      <div class="accountinfo" ng-hide="$ctrl.showButton">
+            <div ng-repeat="x in $ctrl.data">
+                  {{x.Name}}
+            </div>
       </div>
-      <div ng-repeat="x in $ctrl.data">
-            {{x.Id}}
+      <div>
+            <div ng-repeat="x in $ctrl.data">
+                  {{x.Id}}
+            </div>
       </div>
 </div>
