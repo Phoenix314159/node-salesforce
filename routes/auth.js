@@ -26,7 +26,7 @@ module.exports = app => {
             console.log('Org ID: ' + userInfo.organizationId);
             req.session.accessToken = conn.accessToken;
             req.session.instanceUrl = conn.instanceUrl;
-            res.redirect('https://salesforce-1256.herokuapp.com/accounts');
+            res.redirect('https://salesforce-1256.herokuapp.com/#!/accounts');
         });
     });
 }
